@@ -1,0 +1,4 @@
+# Config options for the dart-dio generator
+pubName: intelliplan_api
+pubVersion: 0.0.2
+pubDescription: "Intelliplan API Client"
