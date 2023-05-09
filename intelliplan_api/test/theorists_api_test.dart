@@ -12,17 +12,22 @@ void main() {
       // TODO
     });
 
-    //Future<GetTheoristsResponse> apiV1TheoristsGet() async
+    //Future<TheoristResponseIEnumerableCollectionBaseResponse> apiV1TheoristsGet() async
     test('test apiV1TheoristsGet', () async {
       // TODO
     });
 
-    //Future apiV1TheoristsIdGet(int id) async
+    //Future<TheoristResponse> apiV1TheoristsIdGet(int id) async
     test('test apiV1TheoristsIdGet', () async {
       // TODO
     });
 
-    //Future apiV1TheoristsPost({ AddOrUpdateTheoristRequest addOrUpdateTheoristRequest }) async
+    //Future<TheoristResponse> apiV1TheoristsPatch({ AddOrUpdateTheoristRequest addOrUpdateTheoristRequest }) async
+    test('test apiV1TheoristsPatch', () async {
+      // TODO
+    });
+
+    //Future<AddOrUpdateTheoristResponse> apiV1TheoristsPost({ AddOrUpdateTheoristRequest addOrUpdateTheoristRequest }) async
     test('test apiV1TheoristsPost', () async {
       // TODO
     });

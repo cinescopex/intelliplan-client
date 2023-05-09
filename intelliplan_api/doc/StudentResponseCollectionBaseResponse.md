@@ -1,4 +1,4 @@
-# intelliplan_api.model.GetTheoristsResponse
+# intelliplan_api.model.StudentResponseCollectionBaseResponse
 
 ## Load the model package
 ```dart
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **errorMessage** | **String** |  | [optional] 
 **status** | [**BaseResponseStatus**](BaseResponseStatus.md) |  | [optional] 
 **errors** | [**BuiltMap&lt;String, BuiltList&lt;String&gt;&gt;**](BuiltList.md) |  | [optional] 
-**theorists** | [**BuiltList&lt;Theorist&gt;**](Theorist.md) |  | [optional] 
+**data** | [**StudentResponse**](StudentResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

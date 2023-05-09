@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:intelliplan_api/intelliplan_api.dart';
 
-// tests for StudentResponse
+// tests for UserResponse
 void main() {
-  final instance = StudentResponseBuilder();
+  final instance = UserResponseBuilder();
   // TODO add properties to the builder and call build()
 
-  group(StudentResponse, () {
+  group(UserResponse, () {
     // bool succeeded
     test('to test the property `succeeded`', () async {
       // TODO
@@ -27,23 +27,13 @@ void main() {
       // TODO
     });
 
-    // int studentId
-    test('to test the property `studentId`', () async {
+    // String email
+    test('to test the property `email`', () async {
       // TODO
     });
 
-    // String firstName
-    test('to test the property `firstName`', () async {
-      // TODO
-    });
-
-    // String lastName
-    test('to test the property `lastName`', () async {
-      // TODO
-    });
-
-    // DateTime dateOfBirth
-    test('to test the property `dateOfBirth`', () async {
+    // bool isActive
+    test('to test the property `isActive`', () async {
       // TODO
     });
 

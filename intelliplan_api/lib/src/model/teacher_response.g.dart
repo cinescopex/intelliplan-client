@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'student_response.dart';
+part of 'teacher_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$StudentResponse extends StudentResponse {
+class _$TeacherResponse extends TeacherResponse {
   @override
   final bool? succeeded;
   @override
@@ -16,48 +16,48 @@ class _$StudentResponse extends StudentResponse {
   @override
   final BuiltMap<String, BuiltList<String>>? errors;
   @override
-  final int? studentId;
+  final int? teacherId;
+  @override
+  final int? userId;
   @override
   final String? firstName;
   @override
   final String? lastName;
-  @override
-  final DateTime? dateOfBirth;
 
-  factory _$StudentResponse([void Function(StudentResponseBuilder)? updates]) =>
-      (new StudentResponseBuilder()..update(updates))._build();
+  factory _$TeacherResponse([void Function(TeacherResponseBuilder)? updates]) =>
+      (new TeacherResponseBuilder()..update(updates))._build();
 
-  _$StudentResponse._(
+  _$TeacherResponse._(
       {this.succeeded,
       this.errorMessage,
       this.status,
       this.errors,
-      this.studentId,
+      this.teacherId,
+      this.userId,
       this.firstName,
-      this.lastName,
-      this.dateOfBirth})
+      this.lastName})
       : super._();
 
   @override
-  StudentResponse rebuild(void Function(StudentResponseBuilder) updates) =>
+  TeacherResponse rebuild(void Function(TeacherResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  StudentResponseBuilder toBuilder() =>
-      new StudentResponseBuilder()..replace(this);
+  TeacherResponseBuilder toBuilder() =>
+      new TeacherResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is StudentResponse &&
+    return other is TeacherResponse &&
         succeeded == other.succeeded &&
         errorMessage == other.errorMessage &&
         status == other.status &&
         errors == other.errors &&
-        studentId == other.studentId &&
+        teacherId == other.teacherId &&
+        userId == other.userId &&
         firstName == other.firstName &&
-        lastName == other.lastName &&
-        dateOfBirth == other.dateOfBirth;
+        lastName == other.lastName;
   }
 
   @override
@@ -67,32 +67,32 @@ class _$StudentResponse extends StudentResponse {
     _$hash = $jc(_$hash, errorMessage.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
-    _$hash = $jc(_$hash, studentId.hashCode);
+    _$hash = $jc(_$hash, teacherId.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, firstName.hashCode);
     _$hash = $jc(_$hash, lastName.hashCode);
-    _$hash = $jc(_$hash, dateOfBirth.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'StudentResponse')
+    return (newBuiltValueToStringHelper(r'TeacherResponse')
           ..add('succeeded', succeeded)
           ..add('errorMessage', errorMessage)
           ..add('status', status)
           ..add('errors', errors)
-          ..add('studentId', studentId)
+          ..add('teacherId', teacherId)
+          ..add('userId', userId)
           ..add('firstName', firstName)
-          ..add('lastName', lastName)
-          ..add('dateOfBirth', dateOfBirth))
+          ..add('lastName', lastName))
         .toString();
   }
 }
 
-class StudentResponseBuilder
-    implements Builder<StudentResponse, StudentResponseBuilder> {
-  _$StudentResponse? _$v;
+class TeacherResponseBuilder
+    implements Builder<TeacherResponse, TeacherResponseBuilder> {
+  _$TeacherResponse? _$v;
 
   bool? _succeeded;
   bool? get succeeded => _$this._succeeded;
@@ -112,9 +112,13 @@ class StudentResponseBuilder
   set errors(MapBuilder<String, BuiltList<String>>? errors) =>
       _$this._errors = errors;
 
-  int? _studentId;
-  int? get studentId => _$this._studentId;
-  set studentId(int? studentId) => _$this._studentId = studentId;
+  int? _teacherId;
+  int? get teacherId => _$this._teacherId;
+  set teacherId(int? teacherId) => _$this._teacherId = teacherId;
+
+  int? _userId;
+  int? get userId => _$this._userId;
+  set userId(int? userId) => _$this._userId = userId;
 
   String? _firstName;
   String? get firstName => _$this._firstName;
@@ -124,57 +128,53 @@ class StudentResponseBuilder
   String? get lastName => _$this._lastName;
   set lastName(String? lastName) => _$this._lastName = lastName;
 
-  DateTime? _dateOfBirth;
-  DateTime? get dateOfBirth => _$this._dateOfBirth;
-  set dateOfBirth(DateTime? dateOfBirth) => _$this._dateOfBirth = dateOfBirth;
-
-  StudentResponseBuilder() {
-    StudentResponse._defaults(this);
+  TeacherResponseBuilder() {
+    TeacherResponse._defaults(this);
   }
 
-  StudentResponseBuilder get _$this {
+  TeacherResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _succeeded = $v.succeeded;
       _errorMessage = $v.errorMessage;
       _status = $v.status;
       _errors = $v.errors?.toBuilder();
-      _studentId = $v.studentId;
+      _teacherId = $v.teacherId;
+      _userId = $v.userId;
       _firstName = $v.firstName;
       _lastName = $v.lastName;
-      _dateOfBirth = $v.dateOfBirth;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(StudentResponse other) {
+  void replace(TeacherResponse other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$StudentResponse;
+    _$v = other as _$TeacherResponse;
   }
 
   @override
-  void update(void Function(StudentResponseBuilder)? updates) {
+  void update(void Function(TeacherResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  StudentResponse build() => _build();
+  TeacherResponse build() => _build();
 
-  _$StudentResponse _build() {
-    _$StudentResponse _$result;
+  _$TeacherResponse _build() {
+    _$TeacherResponse _$result;
     try {
       _$result = _$v ??
-          new _$StudentResponse._(
+          new _$TeacherResponse._(
               succeeded: succeeded,
               errorMessage: errorMessage,
               status: status,
               errors: _errors?.build(),
-              studentId: studentId,
+              teacherId: teacherId,
+              userId: userId,
               firstName: firstName,
-              lastName: lastName,
-              dateOfBirth: dateOfBirth);
+              lastName: lastName);
     } catch (_) {
       late String _$failedField;
       try {
@@ -182,7 +182,7 @@ class StudentResponseBuilder
         _errors?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'StudentResponse', _$failedField, e.toString());
+            r'TeacherResponse', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -4,75 +4,73 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
+import 'package:intelliplan_api/src/model/theorist_response.dart';
+import 'package:intelliplan_api/src/model/base_response_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'validation_problem_details.g.dart';
+part 'theorist_response_i_enumerable_collection_base_response.g.dart';
 
-/// ValidationProblemDetails
+/// TheoristResponseIEnumerableCollectionBaseResponse
 ///
 /// Properties:
-/// * [type] 
-/// * [title] 
+/// * [succeeded] 
+/// * [errorMessage] 
 /// * [status] 
-/// * [detail] 
-/// * [instance] 
 /// * [errors] 
+/// * [data] 
 @BuiltValue()
-abstract class ValidationProblemDetails implements Built<ValidationProblemDetails, ValidationProblemDetailsBuilder> {
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+abstract class TheoristResponseIEnumerableCollectionBaseResponse implements Built<TheoristResponseIEnumerableCollectionBaseResponse, TheoristResponseIEnumerableCollectionBaseResponseBuilder> {
+  @BuiltValueField(wireName: r'succeeded')
+  bool? get succeeded;
 
-  @BuiltValueField(wireName: r'title')
-  String? get title;
+  @BuiltValueField(wireName: r'errorMessage')
+  String? get errorMessage;
 
   @BuiltValueField(wireName: r'status')
-  int? get status;
-
-  @BuiltValueField(wireName: r'detail')
-  String? get detail;
-
-  @BuiltValueField(wireName: r'instance')
-  String? get instance;
+  BaseResponseStatus? get status;
+  // enum statusEnum {  200,  400,  401,  403,  404,  500,  501,  };
 
   @BuiltValueField(wireName: r'errors')
   BuiltMap<String, BuiltList<String>>? get errors;
 
-  ValidationProblemDetails._();
+  @BuiltValueField(wireName: r'data')
+  BuiltList<TheoristResponse>? get data;
 
-  factory ValidationProblemDetails([void updates(ValidationProblemDetailsBuilder b)]) = _$ValidationProblemDetails;
+  TheoristResponseIEnumerableCollectionBaseResponse._();
+
+  factory TheoristResponseIEnumerableCollectionBaseResponse([void updates(TheoristResponseIEnumerableCollectionBaseResponseBuilder b)]) = _$TheoristResponseIEnumerableCollectionBaseResponse;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ValidationProblemDetailsBuilder b) => b;
+  static void _defaults(TheoristResponseIEnumerableCollectionBaseResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ValidationProblemDetails> get serializer => _$ValidationProblemDetailsSerializer();
+  static Serializer<TheoristResponseIEnumerableCollectionBaseResponse> get serializer => _$TheoristResponseIEnumerableCollectionBaseResponseSerializer();
 }
 
-class _$ValidationProblemDetailsSerializer implements PrimitiveSerializer<ValidationProblemDetails> {
+class _$TheoristResponseIEnumerableCollectionBaseResponseSerializer implements PrimitiveSerializer<TheoristResponseIEnumerableCollectionBaseResponse> {
   @override
-  final Iterable<Type> types = const [ValidationProblemDetails, _$ValidationProblemDetails];
+  final Iterable<Type> types = const [TheoristResponseIEnumerableCollectionBaseResponse, _$TheoristResponseIEnumerableCollectionBaseResponse];
 
   @override
-  final String wireName = r'ValidationProblemDetails';
+  final String wireName = r'TheoristResponseIEnumerableCollectionBaseResponse';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ValidationProblemDetails object, {
+    TheoristResponseIEnumerableCollectionBaseResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.type != null) {
-      yield r'type';
+    if (object.succeeded != null) {
+      yield r'succeeded';
       yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType.nullable(String),
+        object.succeeded,
+        specifiedType: const FullType(bool),
       );
     }
-    if (object.title != null) {
-      yield r'title';
+    if (object.errorMessage != null) {
+      yield r'errorMessage';
       yield serializers.serialize(
-        object.title,
+        object.errorMessage,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -80,21 +78,7 @@ class _$ValidationProblemDetailsSerializer implements PrimitiveSerializer<Valida
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType: const FullType.nullable(int),
-      );
-    }
-    if (object.detail != null) {
-      yield r'detail';
-      yield serializers.serialize(
-        object.detail,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.instance != null) {
-      yield r'instance';
-      yield serializers.serialize(
-        object.instance,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(BaseResponseStatus),
       );
     }
     if (object.errors != null) {
@@ -104,12 +88,19 @@ class _$ValidationProblemDetailsSerializer implements PrimitiveSerializer<Valida
         specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])]),
       );
     }
+    if (object.data != null) {
+      yield r'data';
+      yield serializers.serialize(
+        object.data,
+        specifiedType: const FullType.nullable(BuiltList, [FullType(TheoristResponse)]),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    ValidationProblemDetails object, {
+    TheoristResponseIEnumerableCollectionBaseResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -120,52 +111,34 @@ class _$ValidationProblemDetailsSerializer implements PrimitiveSerializer<Valida
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ValidationProblemDetailsBuilder result,
+    required TheoristResponseIEnumerableCollectionBaseResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'type':
+        case r'succeeded':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.type = valueDes;
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.succeeded = valueDes;
           break;
-        case r'title':
+        case r'errorMessage':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(String),
           ) as String?;
           if (valueDes == null) continue;
-          result.title = valueDes;
+          result.errorMessage = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(BaseResponseStatus),
+          ) as BaseResponseStatus;
           result.status = valueDes;
-          break;
-        case r'detail':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.detail = valueDes;
-          break;
-        case r'instance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.instance = valueDes;
           break;
         case r'errors':
           final valueDes = serializers.deserialize(
@@ -174,6 +147,14 @@ class _$ValidationProblemDetailsSerializer implements PrimitiveSerializer<Valida
           ) as BuiltMap<String, BuiltList<String>>?;
           if (valueDes == null) continue;
           result.errors.replace(valueDes);
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(BuiltList, [FullType(TheoristResponse)]),
+          ) as BuiltList<TheoristResponse>?;
+          if (valueDes == null) continue;
+          result.data.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -184,12 +165,12 @@ class _$ValidationProblemDetailsSerializer implements PrimitiveSerializer<Valida
   }
 
   @override
-  ValidationProblemDetails deserialize(
+  TheoristResponseIEnumerableCollectionBaseResponse deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ValidationProblemDetailsBuilder();
+    final result = TheoristResponseIEnumerableCollectionBaseResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

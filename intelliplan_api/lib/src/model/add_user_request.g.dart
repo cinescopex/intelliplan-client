@@ -8,32 +8,20 @@ part of 'add_user_request.dart';
 
 class _$AddUserRequest extends AddUserRequest {
   @override
-  final String userName;
-  @override
-  final String firstName;
-  @override
-  final String lastName;
+  final int? userId;
   @override
   final String email;
   @override
   final String password;
+  @override
+  final bool? isActive;
 
   factory _$AddUserRequest([void Function(AddUserRequestBuilder)? updates]) =>
       (new AddUserRequestBuilder()..update(updates))._build();
 
   _$AddUserRequest._(
-      {required this.userName,
-      required this.firstName,
-      required this.lastName,
-      required this.email,
-      required this.password})
+      {this.userId, required this.email, required this.password, this.isActive})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        userName, r'AddUserRequest', 'userName');
-    BuiltValueNullFieldError.checkNotNull(
-        firstName, r'AddUserRequest', 'firstName');
-    BuiltValueNullFieldError.checkNotNull(
-        lastName, r'AddUserRequest', 'lastName');
     BuiltValueNullFieldError.checkNotNull(email, r'AddUserRequest', 'email');
     BuiltValueNullFieldError.checkNotNull(
         password, r'AddUserRequest', 'password');
@@ -51,21 +39,19 @@ class _$AddUserRequest extends AddUserRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AddUserRequest &&
-        userName == other.userName &&
-        firstName == other.firstName &&
-        lastName == other.lastName &&
+        userId == other.userId &&
         email == other.email &&
-        password == other.password;
+        password == other.password &&
+        isActive == other.isActive;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, userName.hashCode);
-    _$hash = $jc(_$hash, firstName.hashCode);
-    _$hash = $jc(_$hash, lastName.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, password.hashCode);
+    _$hash = $jc(_$hash, isActive.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -73,11 +59,10 @@ class _$AddUserRequest extends AddUserRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AddUserRequest')
-          ..add('userName', userName)
-          ..add('firstName', firstName)
-          ..add('lastName', lastName)
+          ..add('userId', userId)
           ..add('email', email)
-          ..add('password', password))
+          ..add('password', password)
+          ..add('isActive', isActive))
         .toString();
   }
 }
@@ -86,17 +71,9 @@ class AddUserRequestBuilder
     implements Builder<AddUserRequest, AddUserRequestBuilder> {
   _$AddUserRequest? _$v;
 
-  String? _userName;
-  String? get userName => _$this._userName;
-  set userName(String? userName) => _$this._userName = userName;
-
-  String? _firstName;
-  String? get firstName => _$this._firstName;
-  set firstName(String? firstName) => _$this._firstName = firstName;
-
-  String? _lastName;
-  String? get lastName => _$this._lastName;
-  set lastName(String? lastName) => _$this._lastName = lastName;
+  int? _userId;
+  int? get userId => _$this._userId;
+  set userId(int? userId) => _$this._userId = userId;
 
   String? _email;
   String? get email => _$this._email;
@@ -106,6 +83,10 @@ class AddUserRequestBuilder
   String? get password => _$this._password;
   set password(String? password) => _$this._password = password;
 
+  bool? _isActive;
+  bool? get isActive => _$this._isActive;
+  set isActive(bool? isActive) => _$this._isActive = isActive;
+
   AddUserRequestBuilder() {
     AddUserRequest._defaults(this);
   }
@@ -113,11 +94,10 @@ class AddUserRequestBuilder
   AddUserRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _userName = $v.userName;
-      _firstName = $v.firstName;
-      _lastName = $v.lastName;
+      _userId = $v.userId;
       _email = $v.email;
       _password = $v.password;
+      _isActive = $v.isActive;
       _$v = null;
     }
     return this;
@@ -140,16 +120,12 @@ class AddUserRequestBuilder
   _$AddUserRequest _build() {
     final _$result = _$v ??
         new _$AddUserRequest._(
-            userName: BuiltValueNullFieldError.checkNotNull(
-                userName, r'AddUserRequest', 'userName'),
-            firstName: BuiltValueNullFieldError.checkNotNull(
-                firstName, r'AddUserRequest', 'firstName'),
-            lastName: BuiltValueNullFieldError.checkNotNull(
-                lastName, r'AddUserRequest', 'lastName'),
+            userId: userId,
             email: BuiltValueNullFieldError.checkNotNull(
                 email, r'AddUserRequest', 'email'),
             password: BuiltValueNullFieldError.checkNotNull(
-                password, r'AddUserRequest', 'password'));
+                password, r'AddUserRequest', 'password'),
+            isActive: isActive);
     replace(_$result);
     return _$result;
   }

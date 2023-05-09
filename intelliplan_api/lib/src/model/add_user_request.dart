@@ -11,27 +11,23 @@ part 'add_user_request.g.dart';
 /// AddUserRequest
 ///
 /// Properties:
-/// * [userName] 
-/// * [firstName] 
-/// * [lastName] 
+/// * [userId] 
 /// * [email] 
 /// * [password] 
+/// * [isActive] 
 @BuiltValue()
 abstract class AddUserRequest implements Built<AddUserRequest, AddUserRequestBuilder> {
-  @BuiltValueField(wireName: r'userName')
-  String get userName;
-
-  @BuiltValueField(wireName: r'firstName')
-  String get firstName;
-
-  @BuiltValueField(wireName: r'lastName')
-  String get lastName;
+  @BuiltValueField(wireName: r'userId')
+  int? get userId;
 
   @BuiltValueField(wireName: r'email')
   String get email;
 
   @BuiltValueField(wireName: r'password')
   String get password;
+
+  @BuiltValueField(wireName: r'isActive')
+  bool? get isActive;
 
   AddUserRequest._();
 
@@ -56,21 +52,13 @@ class _$AddUserRequestSerializer implements PrimitiveSerializer<AddUserRequest> 
     AddUserRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'userName';
-    yield serializers.serialize(
-      object.userName,
-      specifiedType: const FullType(String),
-    );
-    yield r'firstName';
-    yield serializers.serialize(
-      object.firstName,
-      specifiedType: const FullType(String),
-    );
-    yield r'lastName';
-    yield serializers.serialize(
-      object.lastName,
-      specifiedType: const FullType(String),
-    );
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(int),
+      );
+    }
     yield r'email';
     yield serializers.serialize(
       object.email,
@@ -81,6 +69,13 @@ class _$AddUserRequestSerializer implements PrimitiveSerializer<AddUserRequest> 
       object.password,
       specifiedType: const FullType(String),
     );
+    if (object.isActive != null) {
+      yield r'isActive';
+      yield serializers.serialize(
+        object.isActive,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -104,26 +99,12 @@ class _$AddUserRequestSerializer implements PrimitiveSerializer<AddUserRequest> 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'userName':
+        case r'userId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userName = valueDes;
-          break;
-        case r'firstName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.firstName = valueDes;
-          break;
-        case r'lastName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastName = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.userId = valueDes;
           break;
         case r'email':
           final valueDes = serializers.deserialize(
@@ -138,6 +119,13 @@ class _$AddUserRequestSerializer implements PrimitiveSerializer<AddUserRequest> 
             specifiedType: const FullType(String),
           ) as String;
           result.password = valueDes;
+          break;
+        case r'isActive':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isActive = valueDes;
           break;
         default:
           unhandled.add(key);

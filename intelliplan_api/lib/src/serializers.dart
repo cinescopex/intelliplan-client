@@ -18,21 +18,24 @@ import 'package:intelliplan_api/src/model/activity.dart';
 import 'package:intelliplan_api/src/model/add_or_update_student_request.dart';
 import 'package:intelliplan_api/src/model/add_or_update_teacher_request.dart';
 import 'package:intelliplan_api/src/model/add_or_update_theorist_request.dart';
+import 'package:intelliplan_api/src/model/add_or_update_theorist_response.dart';
 import 'package:intelliplan_api/src/model/add_user_request.dart';
 import 'package:intelliplan_api/src/model/add_user_response.dart';
 import 'package:intelliplan_api/src/model/base_response_status.dart';
-import 'package:intelliplan_api/src/model/get_theorists_response.dart';
 import 'package:intelliplan_api/src/model/idea.dart';
 import 'package:intelliplan_api/src/model/outcome.dart';
 import 'package:intelliplan_api/src/model/project.dart';
-import 'package:intelliplan_api/src/model/student.dart';
 import 'package:intelliplan_api/src/model/student_response.dart';
-import 'package:intelliplan_api/src/model/teacher.dart';
-import 'package:intelliplan_api/src/model/teacher_student.dart';
+import 'package:intelliplan_api/src/model/student_response_collection_base_response.dart';
+import 'package:intelliplan_api/src/model/student_response_i_enumerable_collection_base_response.dart';
+import 'package:intelliplan_api/src/model/teacher_response.dart';
+import 'package:intelliplan_api/src/model/teacher_response_i_enumerable_collection_base_response.dart';
 import 'package:intelliplan_api/src/model/theorist.dart';
+import 'package:intelliplan_api/src/model/theorist_response.dart';
+import 'package:intelliplan_api/src/model/theorist_response_i_enumerable_collection_base_response.dart';
 import 'package:intelliplan_api/src/model/user_authentication_request.dart';
 import 'package:intelliplan_api/src/model/user_authentication_response.dart';
-import 'package:intelliplan_api/src/model/validation_problem_details.dart';
+import 'package:intelliplan_api/src/model/user_response.dart';
 
 part 'serializers.g.dart';
 
@@ -41,21 +44,24 @@ part 'serializers.g.dart';
   AddOrUpdateStudentRequest,
   AddOrUpdateTeacherRequest,
   AddOrUpdateTheoristRequest,
+  AddOrUpdateTheoristResponse,
   AddUserRequest,
   AddUserResponse,
   BaseResponseStatus,
-  GetTheoristsResponse,
   Idea,
   Outcome,
   Project,
-  Student,
   StudentResponse,
-  Teacher,
-  TeacherStudent,
+  StudentResponseCollectionBaseResponse,
+  StudentResponseIEnumerableCollectionBaseResponse,
+  TeacherResponse,
+  TeacherResponseIEnumerableCollectionBaseResponse,
   Theorist,
+  TheoristResponse,
+  TheoristResponseIEnumerableCollectionBaseResponse,
   UserAuthenticationRequest,
   UserAuthenticationResponse,
-  ValidationProblemDetails,
+  UserResponse,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(

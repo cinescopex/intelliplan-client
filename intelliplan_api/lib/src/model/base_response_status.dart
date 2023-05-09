@@ -23,6 +23,8 @@ class BaseResponseStatus extends EnumClass {
   static const BaseResponseStatus number404 = _$number404;
   @BuiltValueEnumConst(wireNumber: 500)
   static const BaseResponseStatus number500 = _$number500;
+  @BuiltValueEnumConst(wireNumber: 501)
+  static const BaseResponseStatus number501 = _$number501;
 
   static Serializer<BaseResponseStatus> get serializer => _$baseResponseStatusSerializer;
 

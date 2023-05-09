@@ -1,4 +1,4 @@
-# intelliplan_api.model.Teacher
+# intelliplan_api.model.AddOrUpdateTheoristResponse
 
 ## Load the model package
 ```dart
@@ -8,11 +8,10 @@ import 'package:intelliplan_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**teacherId** | **int** |  | [optional] 
-**userId** | **int** |  | [optional] 
-**firstName** | **String** |  | [optional] 
-**lastName** | **String** |  | [optional] 
-**teacherStudents** | [**BuiltList&lt;TeacherStudent&gt;**](TeacherStudent.md) |  | [optional] 
+**succeeded** | **bool** |  | [optional] 
+**errorMessage** | **String** |  | [optional] 
+**status** | [**BaseResponseStatus**](BaseResponseStatus.md) |  | [optional] 
+**errors** | [**BuiltMap&lt;String, BuiltList&lt;String&gt;&gt;**](BuiltList.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:intelliplan_api/intelliplan_api.dart';
 
-// tests for StudentResponse
+// tests for TheoristResponse
 void main() {
-  final instance = StudentResponseBuilder();
+  final instance = TheoristResponseBuilder();
   // TODO add properties to the builder and call build()
 
-  group(StudentResponse, () {
+  group(TheoristResponse, () {
     // bool succeeded
     test('to test the property `succeeded`', () async {
       // TODO
@@ -27,23 +27,18 @@ void main() {
       // TODO
     });
 
-    // int studentId
-    test('to test the property `studentId`', () async {
+    // int theoristId
+    test('to test the property `theoristId`', () async {
       // TODO
     });
 
-    // String firstName
-    test('to test the property `firstName`', () async {
+    // String name
+    test('to test the property `name`', () async {
       // TODO
     });
 
-    // String lastName
-    test('to test the property `lastName`', () async {
-      // TODO
-    });
-
-    // DateTime dateOfBirth
-    test('to test the property `dateOfBirth`', () async {
+    // String description
+    test('to test the property `description`', () async {
       // TODO
     });
 

@@ -8,7 +8,7 @@ part of 'user_authentication_request.dart';
 
 class _$UserAuthenticationRequest extends UserAuthenticationRequest {
   @override
-  final String userNameOrEmail;
+  final String email;
   @override
   final String password;
 
@@ -16,11 +16,10 @@ class _$UserAuthenticationRequest extends UserAuthenticationRequest {
           [void Function(UserAuthenticationRequestBuilder)? updates]) =>
       (new UserAuthenticationRequestBuilder()..update(updates))._build();
 
-  _$UserAuthenticationRequest._(
-      {required this.userNameOrEmail, required this.password})
+  _$UserAuthenticationRequest._({required this.email, required this.password})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        userNameOrEmail, r'UserAuthenticationRequest', 'userNameOrEmail');
+        email, r'UserAuthenticationRequest', 'email');
     BuiltValueNullFieldError.checkNotNull(
         password, r'UserAuthenticationRequest', 'password');
   }
@@ -38,14 +37,14 @@ class _$UserAuthenticationRequest extends UserAuthenticationRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is UserAuthenticationRequest &&
-        userNameOrEmail == other.userNameOrEmail &&
+        email == other.email &&
         password == other.password;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, userNameOrEmail.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, password.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -54,7 +53,7 @@ class _$UserAuthenticationRequest extends UserAuthenticationRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'UserAuthenticationRequest')
-          ..add('userNameOrEmail', userNameOrEmail)
+          ..add('email', email)
           ..add('password', password))
         .toString();
   }
@@ -65,10 +64,9 @@ class UserAuthenticationRequestBuilder
         Builder<UserAuthenticationRequest, UserAuthenticationRequestBuilder> {
   _$UserAuthenticationRequest? _$v;
 
-  String? _userNameOrEmail;
-  String? get userNameOrEmail => _$this._userNameOrEmail;
-  set userNameOrEmail(String? userNameOrEmail) =>
-      _$this._userNameOrEmail = userNameOrEmail;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
   String? _password;
   String? get password => _$this._password;
@@ -81,7 +79,7 @@ class UserAuthenticationRequestBuilder
   UserAuthenticationRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _userNameOrEmail = $v.userNameOrEmail;
+      _email = $v.email;
       _password = $v.password;
       _$v = null;
     }
@@ -105,10 +103,8 @@ class UserAuthenticationRequestBuilder
   _$UserAuthenticationRequest _build() {
     final _$result = _$v ??
         new _$UserAuthenticationRequest._(
-            userNameOrEmail: BuiltValueNullFieldError.checkNotNull(
-                userNameOrEmail,
-                r'UserAuthenticationRequest',
-                'userNameOrEmail'),
+            email: BuiltValueNullFieldError.checkNotNull(
+                email, r'UserAuthenticationRequest', 'email'),
             password: BuiltValueNullFieldError.checkNotNull(
                 password, r'UserAuthenticationRequest', 'password'));
     replace(_$result);

@@ -3,24 +3,25 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:intelliplan_api/src/model/theorist.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:intelliplan_api/src/model/base_response_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'get_theorists_response.g.dart';
+part 'theorist_response.g.dart';
 
-/// GetTheoristsResponse
+/// TheoristResponse
 ///
 /// Properties:
 /// * [succeeded] 
 /// * [errorMessage] 
 /// * [status] 
 /// * [errors] 
-/// * [theorists] 
+/// * [theoristId] 
+/// * [name] 
+/// * [description] 
 @BuiltValue()
-abstract class GetTheoristsResponse implements Built<GetTheoristsResponse, GetTheoristsResponseBuilder> {
+abstract class TheoristResponse implements Built<TheoristResponse, TheoristResponseBuilder> {
   @BuiltValueField(wireName: r'succeeded')
   bool? get succeeded;
 
@@ -29,35 +30,41 @@ abstract class GetTheoristsResponse implements Built<GetTheoristsResponse, GetTh
 
   @BuiltValueField(wireName: r'status')
   BaseResponseStatus? get status;
-  // enum statusEnum {  200,  400,  401,  403,  404,  500,  };
+  // enum statusEnum {  200,  400,  401,  403,  404,  500,  501,  };
 
   @BuiltValueField(wireName: r'errors')
   BuiltMap<String, BuiltList<String>>? get errors;
 
-  @BuiltValueField(wireName: r'theorists')
-  BuiltList<Theorist>? get theorists;
+  @BuiltValueField(wireName: r'theoristId')
+  int? get theoristId;
 
-  GetTheoristsResponse._();
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-  factory GetTheoristsResponse([void updates(GetTheoristsResponseBuilder b)]) = _$GetTheoristsResponse;
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  TheoristResponse._();
+
+  factory TheoristResponse([void updates(TheoristResponseBuilder b)]) = _$TheoristResponse;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(GetTheoristsResponseBuilder b) => b;
+  static void _defaults(TheoristResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetTheoristsResponse> get serializer => _$GetTheoristsResponseSerializer();
+  static Serializer<TheoristResponse> get serializer => _$TheoristResponseSerializer();
 }
 
-class _$GetTheoristsResponseSerializer implements PrimitiveSerializer<GetTheoristsResponse> {
+class _$TheoristResponseSerializer implements PrimitiveSerializer<TheoristResponse> {
   @override
-  final Iterable<Type> types = const [GetTheoristsResponse, _$GetTheoristsResponse];
+  final Iterable<Type> types = const [TheoristResponse, _$TheoristResponse];
 
   @override
-  final String wireName = r'GetTheoristsResponse';
+  final String wireName = r'TheoristResponse';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    GetTheoristsResponse object, {
+    TheoristResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.succeeded != null) {
@@ -88,11 +95,25 @@ class _$GetTheoristsResponseSerializer implements PrimitiveSerializer<GetTheoris
         specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])]),
       );
     }
-    if (object.theorists != null) {
-      yield r'theorists';
+    if (object.theoristId != null) {
+      yield r'theoristId';
       yield serializers.serialize(
-        object.theorists,
-        specifiedType: const FullType.nullable(BuiltList, [FullType(Theorist)]),
+        object.theoristId,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -100,7 +121,7 @@ class _$GetTheoristsResponseSerializer implements PrimitiveSerializer<GetTheoris
   @override
   Object serialize(
     Serializers serializers,
-    GetTheoristsResponse object, {
+    TheoristResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -111,7 +132,7 @@ class _$GetTheoristsResponseSerializer implements PrimitiveSerializer<GetTheoris
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required GetTheoristsResponseBuilder result,
+    required TheoristResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -148,13 +169,28 @@ class _$GetTheoristsResponseSerializer implements PrimitiveSerializer<GetTheoris
           if (valueDes == null) continue;
           result.errors.replace(valueDes);
           break;
-        case r'theorists':
+        case r'theoristId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(Theorist)]),
-          ) as BuiltList<Theorist>?;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.theoristId = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
           if (valueDes == null) continue;
-          result.theorists.replace(valueDes);
+          result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -165,12 +201,12 @@ class _$GetTheoristsResponseSerializer implements PrimitiveSerializer<GetTheoris
   }
 
   @override
-  GetTheoristsResponse deserialize(
+  TheoristResponse deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = GetTheoristsResponseBuilder();
+    final result = TheoristResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

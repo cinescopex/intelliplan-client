@@ -17,6 +17,8 @@ part 'add_user_response.g.dart';
 /// * [errorMessage] 
 /// * [status] 
 /// * [errors] 
+/// * [isActive] 
+/// * [email] 
 @BuiltValue()
 abstract class AddUserResponse implements Built<AddUserResponse, AddUserResponseBuilder> {
   @BuiltValueField(wireName: r'succeeded')
@@ -27,10 +29,16 @@ abstract class AddUserResponse implements Built<AddUserResponse, AddUserResponse
 
   @BuiltValueField(wireName: r'status')
   BaseResponseStatus? get status;
-  // enum statusEnum {  200,  400,  401,  403,  404,  500,  };
+  // enum statusEnum {  200,  400,  401,  403,  404,  500,  501,  };
 
   @BuiltValueField(wireName: r'errors')
   BuiltMap<String, BuiltList<String>>? get errors;
+
+  @BuiltValueField(wireName: r'isActive')
+  bool? get isActive;
+
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
   AddUserResponse._();
 
@@ -81,6 +89,20 @@ class _$AddUserResponseSerializer implements PrimitiveSerializer<AddUserResponse
       yield serializers.serialize(
         object.errors,
         specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])]),
+      );
+    }
+    if (object.isActive != null) {
+      yield r'isActive';
+      yield serializers.serialize(
+        object.isActive,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -135,6 +157,21 @@ class _$AddUserResponseSerializer implements PrimitiveSerializer<AddUserResponse
           ) as BuiltMap<String, BuiltList<String>>?;
           if (valueDes == null) continue;
           result.errors.replace(valueDes);
+          break;
+        case r'isActive':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isActive = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.email = valueDes;
           break;
         default:
           unhandled.add(key);

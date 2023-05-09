@@ -4,22 +4,38 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:intelliplan_api/src/model/teacher_student.dart';
+import 'package:intelliplan_api/src/model/base_response_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'teacher.g.dart';
+part 'teacher_response.g.dart';
 
-/// Teacher
+/// TeacherResponse
 ///
 /// Properties:
+/// * [succeeded] 
+/// * [errorMessage] 
+/// * [status] 
+/// * [errors] 
 /// * [teacherId] 
 /// * [userId] 
 /// * [firstName] 
 /// * [lastName] 
-/// * [teacherStudents] 
 @BuiltValue()
-abstract class Teacher implements Built<Teacher, TeacherBuilder> {
+abstract class TeacherResponse implements Built<TeacherResponse, TeacherResponseBuilder> {
+  @BuiltValueField(wireName: r'succeeded')
+  bool? get succeeded;
+
+  @BuiltValueField(wireName: r'errorMessage')
+  String? get errorMessage;
+
+  @BuiltValueField(wireName: r'status')
+  BaseResponseStatus? get status;
+  // enum statusEnum {  200,  400,  401,  403,  404,  500,  501,  };
+
+  @BuiltValueField(wireName: r'errors')
+  BuiltMap<String, BuiltList<String>>? get errors;
+
   @BuiltValueField(wireName: r'teacherId')
   int? get teacherId;
 
@@ -32,32 +48,57 @@ abstract class Teacher implements Built<Teacher, TeacherBuilder> {
   @BuiltValueField(wireName: r'lastName')
   String? get lastName;
 
-  @BuiltValueField(wireName: r'teacherStudents')
-  BuiltList<TeacherStudent>? get teacherStudents;
+  TeacherResponse._();
 
-  Teacher._();
-
-  factory Teacher([void updates(TeacherBuilder b)]) = _$Teacher;
+  factory TeacherResponse([void updates(TeacherResponseBuilder b)]) = _$TeacherResponse;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TeacherBuilder b) => b;
+  static void _defaults(TeacherResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<Teacher> get serializer => _$TeacherSerializer();
+  static Serializer<TeacherResponse> get serializer => _$TeacherResponseSerializer();
 }
 
-class _$TeacherSerializer implements PrimitiveSerializer<Teacher> {
+class _$TeacherResponseSerializer implements PrimitiveSerializer<TeacherResponse> {
   @override
-  final Iterable<Type> types = const [Teacher, _$Teacher];
+  final Iterable<Type> types = const [TeacherResponse, _$TeacherResponse];
 
   @override
-  final String wireName = r'Teacher';
+  final String wireName = r'TeacherResponse';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    Teacher object, {
+    TeacherResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.succeeded != null) {
+      yield r'succeeded';
+      yield serializers.serialize(
+        object.succeeded,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.errorMessage != null) {
+      yield r'errorMessage';
+      yield serializers.serialize(
+        object.errorMessage,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.status != null) {
+      yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(BaseResponseStatus),
+      );
+    }
+    if (object.errors != null) {
+      yield r'errors';
+      yield serializers.serialize(
+        object.errors,
+        specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])]),
+      );
+    }
     if (object.teacherId != null) {
       yield r'teacherId';
       yield serializers.serialize(
@@ -86,19 +127,12 @@ class _$TeacherSerializer implements PrimitiveSerializer<Teacher> {
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.teacherStudents != null) {
-      yield r'teacherStudents';
-      yield serializers.serialize(
-        object.teacherStudents,
-        specifiedType: const FullType.nullable(BuiltList, [FullType(TeacherStudent)]),
-      );
-    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    Teacher object, {
+    TeacherResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -109,13 +143,43 @@ class _$TeacherSerializer implements PrimitiveSerializer<Teacher> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required TeacherBuilder result,
+    required TeacherResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'succeeded':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.succeeded = valueDes;
+          break;
+        case r'errorMessage':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.errorMessage = valueDes;
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BaseResponseStatus),
+          ) as BaseResponseStatus;
+          result.status = valueDes;
+          break;
+        case r'errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])]),
+          ) as BuiltMap<String, BuiltList<String>>?;
+          if (valueDes == null) continue;
+          result.errors.replace(valueDes);
+          break;
         case r'teacherId':
           final valueDes = serializers.deserialize(
             value,
@@ -146,14 +210,6 @@ class _$TeacherSerializer implements PrimitiveSerializer<Teacher> {
           if (valueDes == null) continue;
           result.lastName = valueDes;
           break;
-        case r'teacherStudents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(TeacherStudent)]),
-          ) as BuiltList<TeacherStudent>?;
-          if (valueDes == null) continue;
-          result.teacherStudents.replace(valueDes);
-          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -163,12 +219,12 @@ class _$TeacherSerializer implements PrimitiveSerializer<Teacher> {
   }
 
   @override
-  Teacher deserialize(
+  TeacherResponse deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = TeacherBuilder();
+    final result = TeacherResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

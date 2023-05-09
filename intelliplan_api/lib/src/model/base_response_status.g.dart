@@ -12,6 +12,7 @@ const BaseResponseStatus _$number401 = const BaseResponseStatus._('number401');
 const BaseResponseStatus _$number403 = const BaseResponseStatus._('number403');
 const BaseResponseStatus _$number404 = const BaseResponseStatus._('number404');
 const BaseResponseStatus _$number500 = const BaseResponseStatus._('number500');
+const BaseResponseStatus _$number501 = const BaseResponseStatus._('number501');
 
 BaseResponseStatus _$valueOf(String name) {
   switch (name) {
@@ -27,6 +28,8 @@ BaseResponseStatus _$valueOf(String name) {
       return _$number404;
     case 'number500':
       return _$number500;
+    case 'number501':
+      return _$number501;
     default:
       throw new ArgumentError(name);
   }
@@ -40,6 +43,7 @@ final BuiltSet<BaseResponseStatus> _$values =
   _$number403,
   _$number404,
   _$number500,
+  _$number501,
 ]);
 
 class _$BaseResponseStatusMeta {
@@ -50,6 +54,7 @@ class _$BaseResponseStatusMeta {
   BaseResponseStatus get number403 => _$number403;
   BaseResponseStatus get number404 => _$number404;
   BaseResponseStatus get number500 => _$number500;
+  BaseResponseStatus get number501 => _$number501;
   BaseResponseStatus valueOf(String name) => _$valueOf(name);
   BuiltSet<BaseResponseStatus> get values => _$values;
 }
@@ -72,6 +77,7 @@ class _$BaseResponseStatusSerializer
     'number403': 403,
     'number404': 404,
     'number500': 500,
+    'number501': 501,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     200: 'number200',
@@ -80,6 +86,7 @@ class _$BaseResponseStatusSerializer
     403: 'number403',
     404: 'number404',
     500: 'number500',
+    501: 'number501',
   };
 
   @override

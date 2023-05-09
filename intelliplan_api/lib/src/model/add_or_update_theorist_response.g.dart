@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'add_user_response.dart';
+part of 'add_or_update_theorist_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AddUserResponse extends AddUserResponse {
+class _$AddOrUpdateTheoristResponse extends AddOrUpdateTheoristResponse {
   @override
   final bool? succeeded;
   @override
@@ -15,41 +15,32 @@ class _$AddUserResponse extends AddUserResponse {
   final BaseResponseStatus? status;
   @override
   final BuiltMap<String, BuiltList<String>>? errors;
-  @override
-  final bool? isActive;
-  @override
-  final String? email;
 
-  factory _$AddUserResponse([void Function(AddUserResponseBuilder)? updates]) =>
-      (new AddUserResponseBuilder()..update(updates))._build();
+  factory _$AddOrUpdateTheoristResponse(
+          [void Function(AddOrUpdateTheoristResponseBuilder)? updates]) =>
+      (new AddOrUpdateTheoristResponseBuilder()..update(updates))._build();
 
-  _$AddUserResponse._(
-      {this.succeeded,
-      this.errorMessage,
-      this.status,
-      this.errors,
-      this.isActive,
-      this.email})
+  _$AddOrUpdateTheoristResponse._(
+      {this.succeeded, this.errorMessage, this.status, this.errors})
       : super._();
 
   @override
-  AddUserResponse rebuild(void Function(AddUserResponseBuilder) updates) =>
+  AddOrUpdateTheoristResponse rebuild(
+          void Function(AddOrUpdateTheoristResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AddUserResponseBuilder toBuilder() =>
-      new AddUserResponseBuilder()..replace(this);
+  AddOrUpdateTheoristResponseBuilder toBuilder() =>
+      new AddOrUpdateTheoristResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AddUserResponse &&
+    return other is AddOrUpdateTheoristResponse &&
         succeeded == other.succeeded &&
         errorMessage == other.errorMessage &&
         status == other.status &&
-        errors == other.errors &&
-        isActive == other.isActive &&
-        email == other.email;
+        errors == other.errors;
   }
 
   @override
@@ -59,28 +50,26 @@ class _$AddUserResponse extends AddUserResponse {
     _$hash = $jc(_$hash, errorMessage.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
-    _$hash = $jc(_$hash, isActive.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AddUserResponse')
+    return (newBuiltValueToStringHelper(r'AddOrUpdateTheoristResponse')
           ..add('succeeded', succeeded)
           ..add('errorMessage', errorMessage)
           ..add('status', status)
-          ..add('errors', errors)
-          ..add('isActive', isActive)
-          ..add('email', email))
+          ..add('errors', errors))
         .toString();
   }
 }
 
-class AddUserResponseBuilder
-    implements Builder<AddUserResponse, AddUserResponseBuilder> {
-  _$AddUserResponse? _$v;
+class AddOrUpdateTheoristResponseBuilder
+    implements
+        Builder<AddOrUpdateTheoristResponse,
+            AddOrUpdateTheoristResponseBuilder> {
+  _$AddOrUpdateTheoristResponse? _$v;
 
   bool? _succeeded;
   bool? get succeeded => _$this._succeeded;
@@ -100,57 +89,45 @@ class AddUserResponseBuilder
   set errors(MapBuilder<String, BuiltList<String>>? errors) =>
       _$this._errors = errors;
 
-  bool? _isActive;
-  bool? get isActive => _$this._isActive;
-  set isActive(bool? isActive) => _$this._isActive = isActive;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  AddUserResponseBuilder() {
-    AddUserResponse._defaults(this);
+  AddOrUpdateTheoristResponseBuilder() {
+    AddOrUpdateTheoristResponse._defaults(this);
   }
 
-  AddUserResponseBuilder get _$this {
+  AddOrUpdateTheoristResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _succeeded = $v.succeeded;
       _errorMessage = $v.errorMessage;
       _status = $v.status;
       _errors = $v.errors?.toBuilder();
-      _isActive = $v.isActive;
-      _email = $v.email;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(AddUserResponse other) {
+  void replace(AddOrUpdateTheoristResponse other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$AddUserResponse;
+    _$v = other as _$AddOrUpdateTheoristResponse;
   }
 
   @override
-  void update(void Function(AddUserResponseBuilder)? updates) {
+  void update(void Function(AddOrUpdateTheoristResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AddUserResponse build() => _build();
+  AddOrUpdateTheoristResponse build() => _build();
 
-  _$AddUserResponse _build() {
-    _$AddUserResponse _$result;
+  _$AddOrUpdateTheoristResponse _build() {
+    _$AddOrUpdateTheoristResponse _$result;
     try {
       _$result = _$v ??
-          new _$AddUserResponse._(
+          new _$AddOrUpdateTheoristResponse._(
               succeeded: succeeded,
               errorMessage: errorMessage,
               status: status,
-              errors: _errors?.build(),
-              isActive: isActive,
-              email: email);
+              errors: _errors?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -158,7 +135,7 @@ class AddUserResponseBuilder
         _errors?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'AddUserResponse', _$failedField, e.toString());
+            r'AddOrUpdateTheoristResponse', _$failedField, e.toString());
       }
       rethrow;
     }

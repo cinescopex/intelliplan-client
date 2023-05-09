@@ -11,21 +11,24 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AddOrUpdateStudentRequest.serializer)
       ..add(AddOrUpdateTeacherRequest.serializer)
       ..add(AddOrUpdateTheoristRequest.serializer)
+      ..add(AddOrUpdateTheoristResponse.serializer)
       ..add(AddUserRequest.serializer)
       ..add(AddUserResponse.serializer)
       ..add(BaseResponseStatus.serializer)
-      ..add(GetTheoristsResponse.serializer)
       ..add(Idea.serializer)
       ..add(Outcome.serializer)
       ..add(Project.serializer)
-      ..add(Student.serializer)
       ..add(StudentResponse.serializer)
-      ..add(Teacher.serializer)
-      ..add(TeacherStudent.serializer)
+      ..add(StudentResponseCollectionBaseResponse.serializer)
+      ..add(StudentResponseIEnumerableCollectionBaseResponse.serializer)
+      ..add(TeacherResponse.serializer)
+      ..add(TeacherResponseIEnumerableCollectionBaseResponse.serializer)
       ..add(Theorist.serializer)
+      ..add(TheoristResponse.serializer)
+      ..add(TheoristResponseIEnumerableCollectionBaseResponse.serializer)
       ..add(UserAuthenticationRequest.serializer)
       ..add(UserAuthenticationResponse.serializer)
-      ..add(ValidationProblemDetails.serializer)
+      ..add(UserResponse.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Activity)]),
           () => new ListBuilder<Activity>())
@@ -39,11 +42,29 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Project)]),
           () => new ListBuilder<Project>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(TeacherStudent)]),
-          () => new ListBuilder<TeacherStudent>())
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltList, const [const FullType(String)])
+          ]),
+          () => new MapBuilder<String, BuiltList<String>>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(TeacherStudent)]),
-          () => new ListBuilder<TeacherStudent>())
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltList, const [const FullType(String)])
+          ]),
+          () => new MapBuilder<String, BuiltList<String>>())
+      ..addBuilderFactory(
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltList, const [const FullType(String)])
+          ]),
+          () => new MapBuilder<String, BuiltList<String>>())
+      ..addBuilderFactory(
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltList, const [const FullType(String)])
+          ]),
+          () => new MapBuilder<String, BuiltList<String>>())
       ..addBuilderFactory(
           const FullType(BuiltMap, const [
             const FullType(String),
@@ -69,8 +90,32 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new MapBuilder<String, BuiltList<String>>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Theorist)]),
-          () => new ListBuilder<Theorist>()))
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltList, const [const FullType(String)])
+          ]),
+          () => new MapBuilder<String, BuiltList<String>>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(StudentResponse)]),
+          () => new ListBuilder<StudentResponse>())
+      ..addBuilderFactory(
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltList, const [const FullType(String)])
+          ]),
+          () => new MapBuilder<String, BuiltList<String>>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(TeacherResponse)]),
+          () => new ListBuilder<TeacherResponse>())
+      ..addBuilderFactory(
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltList, const [const FullType(String)])
+          ]),
+          () => new MapBuilder<String, BuiltList<String>>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(TheoristResponse)]),
+          () => new ListBuilder<TheoristResponse>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

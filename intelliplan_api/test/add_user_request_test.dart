@@ -7,18 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AddUserRequest, () {
-    // String userName
-    test('to test the property `userName`', () async {
-      // TODO
-    });
-
-    // String firstName
-    test('to test the property `firstName`', () async {
-      // TODO
-    });
-
-    // String lastName
-    test('to test the property `lastName`', () async {
+    // int userId
+    test('to test the property `userId`', () async {
       // TODO
     });
 
@@ -29,6 +19,11 @@ void main() {
 
     // String password
     test('to test the property `password`', () async {
+      // TODO
+    });
+
+    // bool isActive
+    test('to test the property `isActive`', () async {
       // TODO
     });
 

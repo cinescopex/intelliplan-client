@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'get_theorists_response.dart';
+part of 'theorist_response_i_enumerable_collection_base_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$GetTheoristsResponse extends GetTheoristsResponse {
+class _$TheoristResponseIEnumerableCollectionBaseResponse
+    extends TheoristResponseIEnumerableCollectionBaseResponse {
   @override
   final bool? succeeded;
   @override
@@ -16,38 +17,41 @@ class _$GetTheoristsResponse extends GetTheoristsResponse {
   @override
   final BuiltMap<String, BuiltList<String>>? errors;
   @override
-  final BuiltList<Theorist>? theorists;
+  final BuiltList<TheoristResponse>? data;
 
-  factory _$GetTheoristsResponse(
-          [void Function(GetTheoristsResponseBuilder)? updates]) =>
-      (new GetTheoristsResponseBuilder()..update(updates))._build();
+  factory _$TheoristResponseIEnumerableCollectionBaseResponse(
+          [void Function(
+                  TheoristResponseIEnumerableCollectionBaseResponseBuilder)?
+              updates]) =>
+      (new TheoristResponseIEnumerableCollectionBaseResponseBuilder()
+            ..update(updates))
+          ._build();
 
-  _$GetTheoristsResponse._(
-      {this.succeeded,
-      this.errorMessage,
-      this.status,
-      this.errors,
-      this.theorists})
+  _$TheoristResponseIEnumerableCollectionBaseResponse._(
+      {this.succeeded, this.errorMessage, this.status, this.errors, this.data})
       : super._();
 
   @override
-  GetTheoristsResponse rebuild(
-          void Function(GetTheoristsResponseBuilder) updates) =>
+  TheoristResponseIEnumerableCollectionBaseResponse rebuild(
+          void Function(
+                  TheoristResponseIEnumerableCollectionBaseResponseBuilder)
+              updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GetTheoristsResponseBuilder toBuilder() =>
-      new GetTheoristsResponseBuilder()..replace(this);
+  TheoristResponseIEnumerableCollectionBaseResponseBuilder toBuilder() =>
+      new TheoristResponseIEnumerableCollectionBaseResponseBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GetTheoristsResponse &&
+    return other is TheoristResponseIEnumerableCollectionBaseResponse &&
         succeeded == other.succeeded &&
         errorMessage == other.errorMessage &&
         status == other.status &&
         errors == other.errors &&
-        theorists == other.theorists;
+        data == other.data;
   }
 
   @override
@@ -57,26 +61,29 @@ class _$GetTheoristsResponse extends GetTheoristsResponse {
     _$hash = $jc(_$hash, errorMessage.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
-    _$hash = $jc(_$hash, theorists.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GetTheoristsResponse')
+    return (newBuiltValueToStringHelper(
+            r'TheoristResponseIEnumerableCollectionBaseResponse')
           ..add('succeeded', succeeded)
           ..add('errorMessage', errorMessage)
           ..add('status', status)
           ..add('errors', errors)
-          ..add('theorists', theorists))
+          ..add('data', data))
         .toString();
   }
 }
 
-class GetTheoristsResponseBuilder
-    implements Builder<GetTheoristsResponse, GetTheoristsResponseBuilder> {
-  _$GetTheoristsResponse? _$v;
+class TheoristResponseIEnumerableCollectionBaseResponseBuilder
+    implements
+        Builder<TheoristResponseIEnumerableCollectionBaseResponse,
+            TheoristResponseIEnumerableCollectionBaseResponseBuilder> {
+  _$TheoristResponseIEnumerableCollectionBaseResponse? _$v;
 
   bool? _succeeded;
   bool? get succeeded => _$this._succeeded;
@@ -96,63 +103,66 @@ class GetTheoristsResponseBuilder
   set errors(MapBuilder<String, BuiltList<String>>? errors) =>
       _$this._errors = errors;
 
-  ListBuilder<Theorist>? _theorists;
-  ListBuilder<Theorist> get theorists =>
-      _$this._theorists ??= new ListBuilder<Theorist>();
-  set theorists(ListBuilder<Theorist>? theorists) =>
-      _$this._theorists = theorists;
+  ListBuilder<TheoristResponse>? _data;
+  ListBuilder<TheoristResponse> get data =>
+      _$this._data ??= new ListBuilder<TheoristResponse>();
+  set data(ListBuilder<TheoristResponse>? data) => _$this._data = data;
 
-  GetTheoristsResponseBuilder() {
-    GetTheoristsResponse._defaults(this);
+  TheoristResponseIEnumerableCollectionBaseResponseBuilder() {
+    TheoristResponseIEnumerableCollectionBaseResponse._defaults(this);
   }
 
-  GetTheoristsResponseBuilder get _$this {
+  TheoristResponseIEnumerableCollectionBaseResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _succeeded = $v.succeeded;
       _errorMessage = $v.errorMessage;
       _status = $v.status;
       _errors = $v.errors?.toBuilder();
-      _theorists = $v.theorists?.toBuilder();
+      _data = $v.data?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GetTheoristsResponse other) {
+  void replace(TheoristResponseIEnumerableCollectionBaseResponse other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GetTheoristsResponse;
+    _$v = other as _$TheoristResponseIEnumerableCollectionBaseResponse;
   }
 
   @override
-  void update(void Function(GetTheoristsResponseBuilder)? updates) {
+  void update(
+      void Function(TheoristResponseIEnumerableCollectionBaseResponseBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GetTheoristsResponse build() => _build();
+  TheoristResponseIEnumerableCollectionBaseResponse build() => _build();
 
-  _$GetTheoristsResponse _build() {
-    _$GetTheoristsResponse _$result;
+  _$TheoristResponseIEnumerableCollectionBaseResponse _build() {
+    _$TheoristResponseIEnumerableCollectionBaseResponse _$result;
     try {
       _$result = _$v ??
-          new _$GetTheoristsResponse._(
+          new _$TheoristResponseIEnumerableCollectionBaseResponse._(
               succeeded: succeeded,
               errorMessage: errorMessage,
               status: status,
               errors: _errors?.build(),
-              theorists: _theorists?.build());
+              data: _data?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'errors';
         _errors?.build();
-        _$failedField = 'theorists';
-        _theorists?.build();
+        _$failedField = 'data';
+        _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GetTheoristsResponse', _$failedField, e.toString());
+            r'TheoristResponseIEnumerableCollectionBaseResponse',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }

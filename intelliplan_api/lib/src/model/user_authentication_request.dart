@@ -11,12 +11,12 @@ part 'user_authentication_request.g.dart';
 /// UserAuthenticationRequest
 ///
 /// Properties:
-/// * [userNameOrEmail] 
+/// * [email] 
 /// * [password] 
 @BuiltValue()
 abstract class UserAuthenticationRequest implements Built<UserAuthenticationRequest, UserAuthenticationRequestBuilder> {
-  @BuiltValueField(wireName: r'userNameOrEmail')
-  String get userNameOrEmail;
+  @BuiltValueField(wireName: r'email')
+  String get email;
 
   @BuiltValueField(wireName: r'password')
   String get password;
@@ -44,9 +44,9 @@ class _$UserAuthenticationRequestSerializer implements PrimitiveSerializer<UserA
     UserAuthenticationRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'userNameOrEmail';
+    yield r'email';
     yield serializers.serialize(
-      object.userNameOrEmail,
+      object.email,
       specifiedType: const FullType(String),
     );
     yield r'password';
@@ -77,12 +77,12 @@ class _$UserAuthenticationRequestSerializer implements PrimitiveSerializer<UserA
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'userNameOrEmail':
+        case r'email':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.userNameOrEmail = valueDes;
+          result.email = valueDes;
           break;
         case r'password':
           final valueDes = serializers.deserialize(

@@ -13,15 +13,13 @@ class _TheoristsPageState extends State<TheoristsPage> {
   // Create the API instance
   final api = createIntelliplanApi();
 
-  Future<List<Theorist>> _fetchTheorists() async {
+  Future<List<TheoristResponse>> _fetchTheorists() async {
     try {
       final response = await api.getTheoristsApi().apiV1TheoristsGet();
       if (response.statusCode == 200) {
-        GetTheoristsResponse? getTheoristsResponse = response.data;
+        var getTheoristsResponse = response.data;
         if (getTheoristsResponse != null) {
-          List<Theorist> theorists =
-              getTheoristsResponse.theorists?.toList() ?? [];
-          return theorists;
+          return getTheoristsResponse.data?.toList() ?? [];
         } else {
           throw Exception('Failed to load theorists');
         }
@@ -46,10 +44,10 @@ class _TheoristsPageState extends State<TheoristsPage> {
       ),
       body: RefreshIndicator(
         onRefresh: _onRefresh,
-        child: FutureBuilder<List<Theorist>>(
+        child: FutureBuilder<List<TheoristResponse>>(
           future: _fetchTheorists(),
-          builder:
-              (BuildContext context, AsyncSnapshot<List<Theorist>> snapshot) {
+          builder: (BuildContext context,
+              AsyncSnapshot<List<TheoristResponse>> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError) {

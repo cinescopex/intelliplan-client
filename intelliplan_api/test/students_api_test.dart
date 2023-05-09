@@ -7,8 +7,13 @@ void main() {
   final instance = IntelliplanApi().getStudentsApi();
 
   group(StudentsApi, () {
-    //Future apiV1StudentsGet() async
+    //Future<StudentResponseCollectionBaseResponse> apiV1StudentsGet() async
     test('test apiV1StudentsGet', () async {
+      // TODO
+    });
+
+    //Future<StudentResponse> apiV1StudentsPatch({ AddOrUpdateStudentRequest addOrUpdateStudentRequest }) async
+    test('test apiV1StudentsPatch', () async {
       // TODO
     });
 
@@ -17,12 +22,12 @@ void main() {
       // TODO
     });
 
-    //Future apiV1StudentsStudentIdDelete(int studentId) async
+    //Future<StudentResponseCollectionBaseResponse> apiV1StudentsStudentIdDelete(int studentId) async
     test('test apiV1StudentsStudentIdDelete', () async {
       // TODO
     });
 
-    //Future apiV1StudentsStudentIdGet(int studentId) async
+    //Future<StudentResponse> apiV1StudentsStudentIdGet(int studentId) async
     test('test apiV1StudentsStudentIdGet', () async {
       // TODO
     });

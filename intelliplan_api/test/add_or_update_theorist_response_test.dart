@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:intelliplan_api/intelliplan_api.dart';
 
-// tests for GetTheoristsResponse
+// tests for AddOrUpdateTheoristResponse
 void main() {
-  final instance = GetTheoristsResponseBuilder();
+  final instance = AddOrUpdateTheoristResponseBuilder();
   // TODO add properties to the builder and call build()
 
-  group(GetTheoristsResponse, () {
+  group(AddOrUpdateTheoristResponse, () {
     // bool succeeded
     test('to test the property `succeeded`', () async {
       // TODO
@@ -24,11 +24,6 @@ void main() {
 
     // BuiltMap<String, BuiltList<String>> errors
     test('to test the property `errors`', () async {
-      // TODO
-    });
-
-    // BuiltList<Theorist> theorists
-    test('to test the property `theorists`', () async {
       // TODO
     });
 

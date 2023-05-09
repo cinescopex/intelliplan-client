@@ -4,25 +4,23 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:intelliplan_api/src/model/teacher_response.dart';
 import 'package:intelliplan_api/src/model/base_response_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'student_response.g.dart';
+part 'teacher_response_i_enumerable_collection_base_response.g.dart';
 
-/// StudentResponse
+/// TeacherResponseIEnumerableCollectionBaseResponse
 ///
 /// Properties:
 /// * [succeeded] 
 /// * [errorMessage] 
 /// * [status] 
 /// * [errors] 
-/// * [studentId] 
-/// * [firstName] 
-/// * [lastName] 
-/// * [dateOfBirth] 
+/// * [data] 
 @BuiltValue()
-abstract class StudentResponse implements Built<StudentResponse, StudentResponseBuilder> {
+abstract class TeacherResponseIEnumerableCollectionBaseResponse implements Built<TeacherResponseIEnumerableCollectionBaseResponse, TeacherResponseIEnumerableCollectionBaseResponseBuilder> {
   @BuiltValueField(wireName: r'succeeded')
   bool? get succeeded;
 
@@ -36,39 +34,30 @@ abstract class StudentResponse implements Built<StudentResponse, StudentResponse
   @BuiltValueField(wireName: r'errors')
   BuiltMap<String, BuiltList<String>>? get errors;
 
-  @BuiltValueField(wireName: r'studentId')
-  int? get studentId;
+  @BuiltValueField(wireName: r'data')
+  BuiltList<TeacherResponse>? get data;
 
-  @BuiltValueField(wireName: r'firstName')
-  String? get firstName;
+  TeacherResponseIEnumerableCollectionBaseResponse._();
 
-  @BuiltValueField(wireName: r'lastName')
-  String? get lastName;
-
-  @BuiltValueField(wireName: r'dateOfBirth')
-  DateTime? get dateOfBirth;
-
-  StudentResponse._();
-
-  factory StudentResponse([void updates(StudentResponseBuilder b)]) = _$StudentResponse;
+  factory TeacherResponseIEnumerableCollectionBaseResponse([void updates(TeacherResponseIEnumerableCollectionBaseResponseBuilder b)]) = _$TeacherResponseIEnumerableCollectionBaseResponse;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(StudentResponseBuilder b) => b;
+  static void _defaults(TeacherResponseIEnumerableCollectionBaseResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<StudentResponse> get serializer => _$StudentResponseSerializer();
+  static Serializer<TeacherResponseIEnumerableCollectionBaseResponse> get serializer => _$TeacherResponseIEnumerableCollectionBaseResponseSerializer();
 }
 
-class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse> {
+class _$TeacherResponseIEnumerableCollectionBaseResponseSerializer implements PrimitiveSerializer<TeacherResponseIEnumerableCollectionBaseResponse> {
   @override
-  final Iterable<Type> types = const [StudentResponse, _$StudentResponse];
+  final Iterable<Type> types = const [TeacherResponseIEnumerableCollectionBaseResponse, _$TeacherResponseIEnumerableCollectionBaseResponse];
 
   @override
-  final String wireName = r'StudentResponse';
+  final String wireName = r'TeacherResponseIEnumerableCollectionBaseResponse';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    StudentResponse object, {
+    TeacherResponseIEnumerableCollectionBaseResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.succeeded != null) {
@@ -99,32 +88,11 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
         specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])]),
       );
     }
-    if (object.studentId != null) {
-      yield r'studentId';
+    if (object.data != null) {
+      yield r'data';
       yield serializers.serialize(
-        object.studentId,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.firstName != null) {
-      yield r'firstName';
-      yield serializers.serialize(
-        object.firstName,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.lastName != null) {
-      yield r'lastName';
-      yield serializers.serialize(
-        object.lastName,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.dateOfBirth != null) {
-      yield r'dateOfBirth';
-      yield serializers.serialize(
-        object.dateOfBirth,
-        specifiedType: const FullType(DateTime),
+        object.data,
+        specifiedType: const FullType.nullable(BuiltList, [FullType(TeacherResponse)]),
       );
     }
   }
@@ -132,7 +100,7 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
   @override
   Object serialize(
     Serializers serializers,
-    StudentResponse object, {
+    TeacherResponseIEnumerableCollectionBaseResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -143,7 +111,7 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required StudentResponseBuilder result,
+    required TeacherResponseIEnumerableCollectionBaseResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -180,35 +148,13 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
           if (valueDes == null) continue;
           result.errors.replace(valueDes);
           break;
-        case r'studentId':
+        case r'data':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.studentId = valueDes;
-          break;
-        case r'firstName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(BuiltList, [FullType(TeacherResponse)]),
+          ) as BuiltList<TeacherResponse>?;
           if (valueDes == null) continue;
-          result.firstName = valueDes;
-          break;
-        case r'lastName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.lastName = valueDes;
-          break;
-        case r'dateOfBirth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateOfBirth = valueDes;
+          result.data.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -219,12 +165,12 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
   }
 
   @override
-  StudentResponse deserialize(
+  TeacherResponseIEnumerableCollectionBaseResponse deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = StudentResponseBuilder();
+    final result = TeacherResponseIEnumerableCollectionBaseResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

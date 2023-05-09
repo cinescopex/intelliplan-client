@@ -14,7 +14,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   // Variables to store the user input and the login response
-  String _username = '';
+  String _email = '';
   String _password = '';
   String _loginResponse = '';
   final tokenManager = TokenManager();
@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
   // Method to authenticate the user
   Future<void> _authenticateUser() async {
     UserAuthenticationRequest request = UserAuthenticationRequest((b) => b
-      ..userNameOrEmail = _username
+      ..email = _email
       ..password = _password);
     try {
       DialogHelper.showLoadingDialog(context);
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                   }
                   return null;
                 },
-                onChanged: (value) => _username = value,
+                onChanged: (value) => _email = value,
               ),
               TextFormField(
                 decoration: InputDecoration(labelText: 'Password'),

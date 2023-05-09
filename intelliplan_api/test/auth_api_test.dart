@@ -17,5 +17,10 @@ void main() {
       // TODO
     });
 
+    //Future<UserResponse> apiV1AuthUpdatePatch({ AddUserRequest addUserRequest }) async
+    test('test apiV1AuthUpdatePatch', () async {
+      // TODO
+    });
+
   });
 }

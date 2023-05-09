@@ -66,6 +66,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AuthApi*](doc\AuthApi.md) | [**apiV1AuthLoginPost**](doc\AuthApi.md#apiv1authloginpost) | **POST** /api/v1/Auth/login | 
 [*AuthApi*](doc\AuthApi.md) | [**apiV1AuthRegisterPost**](doc\AuthApi.md#apiv1authregisterpost) | **POST** /api/v1/Auth/register | 
+[*AuthApi*](doc\AuthApi.md) | [**apiV1AuthUpdatePatch**](doc\AuthApi.md#apiv1authupdatepatch) | **PATCH** /api/v1/Auth/update | 
 [*ProjectsApi*](doc\ProjectsApi.md) | [**apiV1ProjectsActivitiesActivityIdDelete**](doc\ProjectsApi.md#apiv1projectsactivitiesactivityiddelete) | **DELETE** /api/v1/Projects/activities/{activityId} | 
 [*ProjectsApi*](doc\ProjectsApi.md) | [**apiV1ProjectsActivitiesActivityIdGet**](doc\ProjectsApi.md#apiv1projectsactivitiesactivityidget) | **GET** /api/v1/Projects/activities/{activityId} | 
 [*ProjectsApi*](doc\ProjectsApi.md) | [**apiV1ProjectsActivitiesActivityIdPut**](doc\ProjectsApi.md#apiv1projectsactivitiesactivityidput) | **PUT** /api/v1/Projects/activities/{activityId} | 
@@ -87,17 +88,20 @@ Class | Method | HTTP request | Description
 [*ProjectsApi*](doc\ProjectsApi.md) | [**apiV1ProjectsProjectIdOutcomesPost**](doc\ProjectsApi.md#apiv1projectsprojectidoutcomespost) | **POST** /api/v1/Projects/{projectId}/outcomes | 
 [*ProjectsApi*](doc\ProjectsApi.md) | [**apiV1ProjectsProjectIdPut**](doc\ProjectsApi.md#apiv1projectsprojectidput) | **PUT** /api/v1/Projects/{projectId} | 
 [*StudentsApi*](doc\StudentsApi.md) | [**apiV1StudentsGet**](doc\StudentsApi.md#apiv1studentsget) | **GET** /api/v1/Students | 
+[*StudentsApi*](doc\StudentsApi.md) | [**apiV1StudentsPatch**](doc\StudentsApi.md#apiv1studentspatch) | **PATCH** /api/v1/Students | 
 [*StudentsApi*](doc\StudentsApi.md) | [**apiV1StudentsPost**](doc\StudentsApi.md#apiv1studentspost) | **POST** /api/v1/Students | 
 [*StudentsApi*](doc\StudentsApi.md) | [**apiV1StudentsStudentIdDelete**](doc\StudentsApi.md#apiv1studentsstudentiddelete) | **DELETE** /api/v1/Students/{studentId} | 
 [*StudentsApi*](doc\StudentsApi.md) | [**apiV1StudentsStudentIdGet**](doc\StudentsApi.md#apiv1studentsstudentidget) | **GET** /api/v1/Students/{studentId} | 
 [*TeachersApi*](doc\TeachersApi.md) | [**apiV1TeachersGet**](doc\TeachersApi.md#apiv1teachersget) | **GET** /api/v1/Teachers | 
-[*TeachersApi*](doc\TeachersApi.md) | [**apiV1TeachersIdGet**](doc\TeachersApi.md#apiv1teachersidget) | **GET** /api/v1/Teachers/{id} | 
+[*TeachersApi*](doc\TeachersApi.md) | [**apiV1TeachersPatch**](doc\TeachersApi.md#apiv1teacherspatch) | **PATCH** /api/v1/Teachers | 
 [*TeachersApi*](doc\TeachersApi.md) | [**apiV1TeachersPost**](doc\TeachersApi.md#apiv1teacherspost) | **POST** /api/v1/Teachers | 
+[*TeachersApi*](doc\TeachersApi.md) | [**apiV1TeachersTeacherIdGet**](doc\TeachersApi.md#apiv1teachersteacheridget) | **GET** /api/v1/Teachers/{teacherId} | 
 [*TeachersApi*](doc\TeachersApi.md) | [**apiV1TeachersTeacherIdStudentsDelete**](doc\TeachersApi.md#apiv1teachersteacheridstudentsdelete) | **DELETE** /api/v1/Teachers/{teacherId}/students | 
 [*TeachersApi*](doc\TeachersApi.md) | [**apiV1TeachersTeacherIdStudentsGet**](doc\TeachersApi.md#apiv1teachersteacheridstudentsget) | **GET** /api/v1/Teachers/{teacherId}/students | 
 [*TheoristsApi*](doc\TheoristsApi.md) | [**apiV1TheoristsDelete**](doc\TheoristsApi.md#apiv1theoristsdelete) | **DELETE** /api/v1/Theorists | 
 [*TheoristsApi*](doc\TheoristsApi.md) | [**apiV1TheoristsGet**](doc\TheoristsApi.md#apiv1theoristsget) | **GET** /api/v1/Theorists | 
 [*TheoristsApi*](doc\TheoristsApi.md) | [**apiV1TheoristsIdGet**](doc\TheoristsApi.md#apiv1theoristsidget) | **GET** /api/v1/Theorists/{id} | 
+[*TheoristsApi*](doc\TheoristsApi.md) | [**apiV1TheoristsPatch**](doc\TheoristsApi.md#apiv1theoristspatch) | **PATCH** /api/v1/Theorists | 
 [*TheoristsApi*](doc\TheoristsApi.md) | [**apiV1TheoristsPost**](doc\TheoristsApi.md#apiv1theoristspost) | **POST** /api/v1/Theorists | 
 [*TheoristsApi*](doc\TheoristsApi.md) | [**apiV1TheoristsTheoristIdDelete**](doc\TheoristsApi.md#apiv1theoriststheoristiddelete) | **DELETE** /api/v1/Theorists/{theoristId} | 
 
@@ -108,21 +112,24 @@ Class | Method | HTTP request | Description
  - [AddOrUpdateStudentRequest](doc\AddOrUpdateStudentRequest.md)
  - [AddOrUpdateTeacherRequest](doc\AddOrUpdateTeacherRequest.md)
  - [AddOrUpdateTheoristRequest](doc\AddOrUpdateTheoristRequest.md)
+ - [AddOrUpdateTheoristResponse](doc\AddOrUpdateTheoristResponse.md)
  - [AddUserRequest](doc\AddUserRequest.md)
  - [AddUserResponse](doc\AddUserResponse.md)
  - [BaseResponseStatus](doc\BaseResponseStatus.md)
- - [GetTheoristsResponse](doc\GetTheoristsResponse.md)
  - [Idea](doc\Idea.md)
  - [Outcome](doc\Outcome.md)
  - [Project](doc\Project.md)
- - [Student](doc\Student.md)
  - [StudentResponse](doc\StudentResponse.md)
- - [Teacher](doc\Teacher.md)
- - [TeacherStudent](doc\TeacherStudent.md)
+ - [StudentResponseCollectionBaseResponse](doc\StudentResponseCollectionBaseResponse.md)
+ - [StudentResponseIEnumerableCollectionBaseResponse](doc\StudentResponseIEnumerableCollectionBaseResponse.md)
+ - [TeacherResponse](doc\TeacherResponse.md)
+ - [TeacherResponseIEnumerableCollectionBaseResponse](doc\TeacherResponseIEnumerableCollectionBaseResponse.md)
  - [Theorist](doc\Theorist.md)
+ - [TheoristResponse](doc\TheoristResponse.md)
+ - [TheoristResponseIEnumerableCollectionBaseResponse](doc\TheoristResponseIEnumerableCollectionBaseResponse.md)
  - [UserAuthenticationRequest](doc\UserAuthenticationRequest.md)
  - [UserAuthenticationResponse](doc\UserAuthenticationResponse.md)
- - [ValidationProblemDetails](doc\ValidationProblemDetails.md)
+ - [UserResponse](doc\UserResponse.md)
 
 
 ## Documentation For Authorization

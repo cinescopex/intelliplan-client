@@ -8,21 +8,17 @@ import 'package:intelliplan_api/src/model/base_response_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'student_response.g.dart';
+part 'add_or_update_theorist_response.g.dart';
 
-/// StudentResponse
+/// AddOrUpdateTheoristResponse
 ///
 /// Properties:
 /// * [succeeded] 
 /// * [errorMessage] 
 /// * [status] 
 /// * [errors] 
-/// * [studentId] 
-/// * [firstName] 
-/// * [lastName] 
-/// * [dateOfBirth] 
 @BuiltValue()
-abstract class StudentResponse implements Built<StudentResponse, StudentResponseBuilder> {
+abstract class AddOrUpdateTheoristResponse implements Built<AddOrUpdateTheoristResponse, AddOrUpdateTheoristResponseBuilder> {
   @BuiltValueField(wireName: r'succeeded')
   bool? get succeeded;
 
@@ -36,39 +32,27 @@ abstract class StudentResponse implements Built<StudentResponse, StudentResponse
   @BuiltValueField(wireName: r'errors')
   BuiltMap<String, BuiltList<String>>? get errors;
 
-  @BuiltValueField(wireName: r'studentId')
-  int? get studentId;
+  AddOrUpdateTheoristResponse._();
 
-  @BuiltValueField(wireName: r'firstName')
-  String? get firstName;
-
-  @BuiltValueField(wireName: r'lastName')
-  String? get lastName;
-
-  @BuiltValueField(wireName: r'dateOfBirth')
-  DateTime? get dateOfBirth;
-
-  StudentResponse._();
-
-  factory StudentResponse([void updates(StudentResponseBuilder b)]) = _$StudentResponse;
+  factory AddOrUpdateTheoristResponse([void updates(AddOrUpdateTheoristResponseBuilder b)]) = _$AddOrUpdateTheoristResponse;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(StudentResponseBuilder b) => b;
+  static void _defaults(AddOrUpdateTheoristResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<StudentResponse> get serializer => _$StudentResponseSerializer();
+  static Serializer<AddOrUpdateTheoristResponse> get serializer => _$AddOrUpdateTheoristResponseSerializer();
 }
 
-class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse> {
+class _$AddOrUpdateTheoristResponseSerializer implements PrimitiveSerializer<AddOrUpdateTheoristResponse> {
   @override
-  final Iterable<Type> types = const [StudentResponse, _$StudentResponse];
+  final Iterable<Type> types = const [AddOrUpdateTheoristResponse, _$AddOrUpdateTheoristResponse];
 
   @override
-  final String wireName = r'StudentResponse';
+  final String wireName = r'AddOrUpdateTheoristResponse';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    StudentResponse object, {
+    AddOrUpdateTheoristResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.succeeded != null) {
@@ -99,40 +83,12 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
         specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])]),
       );
     }
-    if (object.studentId != null) {
-      yield r'studentId';
-      yield serializers.serialize(
-        object.studentId,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.firstName != null) {
-      yield r'firstName';
-      yield serializers.serialize(
-        object.firstName,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.lastName != null) {
-      yield r'lastName';
-      yield serializers.serialize(
-        object.lastName,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.dateOfBirth != null) {
-      yield r'dateOfBirth';
-      yield serializers.serialize(
-        object.dateOfBirth,
-        specifiedType: const FullType(DateTime),
-      );
-    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    StudentResponse object, {
+    AddOrUpdateTheoristResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -143,7 +99,7 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required StudentResponseBuilder result,
+    required AddOrUpdateTheoristResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -180,36 +136,6 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
           if (valueDes == null) continue;
           result.errors.replace(valueDes);
           break;
-        case r'studentId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.studentId = valueDes;
-          break;
-        case r'firstName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.firstName = valueDes;
-          break;
-        case r'lastName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.lastName = valueDes;
-          break;
-        case r'dateOfBirth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateOfBirth = valueDes;
-          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -219,12 +145,12 @@ class _$StudentResponseSerializer implements PrimitiveSerializer<StudentResponse
   }
 
   @override
-  StudentResponse deserialize(
+  AddOrUpdateTheoristResponse deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = StudentResponseBuilder();
+    final result = AddOrUpdateTheoristResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

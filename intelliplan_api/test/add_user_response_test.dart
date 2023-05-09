@@ -27,5 +27,15 @@ void main() {
       // TODO
     });
 
+    // bool isActive
+    test('to test the property `isActive`', () async {
+      // TODO
+    });
+
+    // String email
+    test('to test the property `email`', () async {
+      // TODO
+    });
+
   });
 }

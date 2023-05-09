@@ -32,7 +32,7 @@ abstract class UserAuthenticationResponse implements Built<UserAuthenticationRes
 
   @BuiltValueField(wireName: r'status')
   BaseResponseStatus? get status;
-  // enum statusEnum {  200,  400,  401,  403,  404,  500,  };
+  // enum statusEnum {  200,  400,  401,  403,  404,  500,  501,  };
 
   @BuiltValueField(wireName: r'errors')
   BuiltMap<String, BuiltList<String>>? get errors;

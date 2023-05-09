@@ -9,6 +9,7 @@ import 'package:dio/dio.dart';
 
 import 'package:intelliplan_api/src/model/add_or_update_student_request.dart';
 import 'package:intelliplan_api/src/model/student_response.dart';
+import 'package:intelliplan_api/src/model/student_response_collection_base_response.dart';
 
 class StudentsApi {
 
@@ -29,9 +30,9 @@ class StudentsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [StudentResponseCollectionBaseResponse] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiV1StudentsGet({ 
+  Future<Response<StudentResponseCollectionBaseResponse>> apiV1StudentsGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,7 +67,136 @@ class StudentsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    StudentResponseCollectionBaseResponse _responseData;
+
+    try {
+      const _responseType = FullType(StudentResponseCollectionBaseResponse);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as StudentResponseCollectionBaseResponse;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<StudentResponseCollectionBaseResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// apiV1StudentsPatch
+  /// 
+  ///
+  /// Parameters:
+  /// * [addOrUpdateStudentRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [StudentResponse] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<StudentResponse>> apiV1StudentsPatch({ 
+    AddOrUpdateStudentRequest? addOrUpdateStudentRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/Students';
+    final _options = Options(
+      method: r'PATCH',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'Bearer',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(AddOrUpdateStudentRequest);
+      _bodyData = addOrUpdateStudentRequest == null ? null : _serializers.serialize(addOrUpdateStudentRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    StudentResponse _responseData;
+
+    try {
+      const _responseType = FullType(StudentResponse);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as StudentResponse;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<StudentResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// apiV1StudentsPost
@@ -182,9 +312,9 @@ class StudentsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [StudentResponseCollectionBaseResponse] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiV1StudentsStudentIdDelete({ 
+  Future<Response<StudentResponseCollectionBaseResponse>> apiV1StudentsStudentIdDelete({ 
     required int studentId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -220,7 +350,35 @@ class StudentsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    StudentResponseCollectionBaseResponse _responseData;
+
+    try {
+      const _responseType = FullType(StudentResponseCollectionBaseResponse);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as StudentResponseCollectionBaseResponse;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<StudentResponseCollectionBaseResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// apiV1StudentsStudentIdGet
@@ -235,9 +393,9 @@ class StudentsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [StudentResponse] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiV1StudentsStudentIdGet({ 
+  Future<Response<StudentResponse>> apiV1StudentsStudentIdGet({ 
     required int studentId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -273,7 +431,35 @@ class StudentsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    StudentResponse _responseData;
+
+    try {
+      const _responseType = FullType(StudentResponse);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as StudentResponse;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<StudentResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
 }
