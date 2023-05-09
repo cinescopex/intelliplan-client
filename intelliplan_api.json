@@ -7,7 +7,9 @@
   "paths": {
     "/api/v1/Auth/register": {
       "post": {
-        "tags": ["Auth"],
+        "tags": [
+          "Auth"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -73,7 +75,9 @@
     },
     "/api/v1/Auth/login": {
       "post": {
-        "tags": ["Auth"],
+        "tags": [
+          "Auth"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -159,7 +163,9 @@
     },
     "/api/v1/Projects": {
       "post": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -203,7 +209,9 @@
         }
       },
       "get": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -239,7 +247,9 @@
     },
     "/api/v1/Projects/{projectId}": {
       "delete": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "projectId",
@@ -259,7 +269,9 @@
         }
       },
       "put": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "projectId",
@@ -315,7 +327,9 @@
         }
       },
       "get": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "projectId",
@@ -354,7 +368,9 @@
     },
     "/api/v1/Projects/outcomes/{outcomeId}": {
       "get": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "outcomeId",
@@ -391,7 +407,9 @@
         }
       },
       "delete": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "outcomeId",
@@ -411,7 +429,9 @@
         }
       },
       "put": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "outcomeId",
@@ -469,7 +489,9 @@
     },
     "/api/v1/Projects/{projectId}/outcomes": {
       "post": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "projectId",
@@ -525,7 +547,9 @@
         }
       },
       "get": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "projectId",
@@ -573,7 +597,9 @@
     },
     "/api/v1/Projects/outcomes/{outcomeId}/ideas": {
       "post": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "outcomeId",
@@ -629,7 +655,9 @@
         }
       },
       "get": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "outcomeId",
@@ -677,7 +705,9 @@
     },
     "/api/v1/Projects/ideas/{ideaId}": {
       "delete": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "ideaId",
@@ -697,7 +727,9 @@
         }
       },
       "put": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "ideaId",
@@ -753,7 +785,9 @@
         }
       },
       "get": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "ideaId",
@@ -792,7 +826,9 @@
     },
     "/api/v1/Projects/ideas/{ideaId}/activities": {
       "post": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "ideaId",
@@ -848,7 +884,9 @@
         }
       },
       "get": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "ideaId",
@@ -896,7 +934,9 @@
     },
     "/api/v1/Projects/activities/{activityId}": {
       "delete": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "activityId",
@@ -916,7 +956,9 @@
         }
       },
       "put": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "activityId",
@@ -972,7 +1014,9 @@
         }
       },
       "get": {
-        "tags": ["Projects"],
+        "tags": [
+          "Projects"
+        ],
         "parameters": [
           {
             "name": "activityId",
@@ -1011,7 +1055,9 @@
     },
     "/api/v1/Students": {
       "get": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -1019,7 +1065,9 @@
         }
       },
       "post": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1065,7 +1113,9 @@
     },
     "/api/v1/Students/{studentId}": {
       "get": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "parameters": [
           {
             "name": "studentId",
@@ -1085,7 +1135,9 @@
         }
       },
       "delete": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "parameters": [
           {
             "name": "studentId",
@@ -1107,7 +1159,9 @@
     },
     "/api/v1/Teachers": {
       "post": {
-        "tags": ["Teachers"],
+        "tags": [
+          "Teachers"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1134,7 +1188,9 @@
         }
       },
       "get": {
-        "tags": ["Teachers"],
+        "tags": [
+          "Teachers"
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -1144,7 +1200,9 @@
     },
     "/api/v1/Teachers/{id}": {
       "get": {
-        "tags": ["Teachers"],
+        "tags": [
+          "Teachers"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1166,7 +1224,9 @@
     },
     "/api/v1/Teachers/{teacherId}/students": {
       "get": {
-        "tags": ["Teachers"],
+        "tags": [
+          "Teachers"
+        ],
         "parameters": [
           {
             "name": "teacherId",
@@ -1186,7 +1246,9 @@
         }
       },
       "delete": {
-        "tags": ["Teachers"],
+        "tags": [
+          "Teachers"
+        ],
         "parameters": [
           {
             "name": "teacherId",
@@ -1208,7 +1270,9 @@
     },
     "/api/v1/Theorists": {
       "post": {
-        "tags": ["Theorists"],
+        "tags": [
+          "Theorists"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1235,7 +1299,9 @@
         }
       },
       "get": {
-        "tags": ["Theorists"],
+        "tags": [
+          "Theorists"
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -1280,7 +1346,9 @@
         }
       },
       "delete": {
-        "tags": ["Theorists"],
+        "tags": [
+          "Theorists"
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -1290,7 +1358,9 @@
     },
     "/api/v1/Theorists/{id}": {
       "get": {
-        "tags": ["Theorists"],
+        "tags": [
+          "Theorists"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1312,7 +1382,9 @@
     },
     "/api/v1/Theorists/{theoristId}": {
       "delete": {
-        "tags": ["Theorists"],
+        "tags": [
+          "Theorists"
+        ],
         "parameters": [
           {
             "name": "theoristId",
@@ -1370,7 +1442,12 @@
         "additionalProperties": false
       },
       "AddOrUpdateStudentRequest": {
-        "required": ["dateOfBirth", "firstName", "lastName", "teacherId"],
+        "required": [
+          "dateOfBirth",
+          "firstName",
+          "lastName",
+          "teacherId"
+        ],
         "type": "object",
         "properties": {
           "studentId": {
@@ -1399,7 +1476,11 @@
         "additionalProperties": false
       },
       "AddOrUpdateTeacherRequest": {
-        "required": ["firstName", "lastName", "userId"],
+        "required": [
+          "firstName",
+          "lastName",
+          "userId"
+        ],
         "type": "object",
         "properties": {
           "userId": {
@@ -1424,7 +1505,10 @@
         "additionalProperties": false
       },
       "AddOrUpdateTheoristRequest": {
-        "required": ["description", "name"],
+        "required": [
+          "description",
+          "name"
+        ],
         "type": "object",
         "properties": {
           "theoristId": {
@@ -1443,7 +1527,13 @@
         "additionalProperties": false
       },
       "AddUserRequest": {
-        "required": ["email", "firstName", "lastName", "password", "userName"],
+        "required": [
+          "email",
+          "firstName",
+          "lastName",
+          "password",
+          "userName"
+        ],
         "type": "object",
         "properties": {
           "userName": {
@@ -1501,7 +1591,14 @@
         "additionalProperties": false
       },
       "BaseResponseStatus": {
-        "enum": [200, 400, 401, 403, 404, 500],
+        "enum": [
+          200,
+          400,
+          401,
+          403,
+          404,
+          500
+        ],
         "type": "integer",
         "format": "int32"
       },
@@ -1757,7 +1854,10 @@
         "additionalProperties": false
       },
       "UserAuthenticationRequest": {
-        "required": ["password", "userNameOrEmail"],
+        "required": [
+          "password",
+          "userNameOrEmail"
+        ],
         "type": "object",
         "properties": {
           "userNameOrEmail": {
@@ -1854,7 +1954,7 @@
             "readOnly": true
           }
         },
-        "additionalProperties": {}
+        "additionalProperties": { }
       }
     },
     "securitySchemes": {
@@ -1868,7 +1968,7 @@
   },
   "security": [
     {
-      "Bearer": []
+      "Bearer": [ ]
     }
   ]
 }

@@ -3,7 +3,7 @@ import 'package:intelliplan_api/intelliplan_api.dart';
 import 'package:intelliplan_app/helpers/token_manager_helper.dart';
 import '../data/api_repository.dart';
 
-const baseUrl = 'http://localhost:5177/';
+const baseUrl = "https://10.0.2.2:7029";
 
 Dio createDio() {
   final options = createDioOptions(baseUrl, 10000, 10000);

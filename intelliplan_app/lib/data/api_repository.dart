@@ -5,6 +5,8 @@ import 'package:openapi_repository_annotations/openapi_repository_annotations.da
 import 'package:intelliplan_api/intelliplan_api.dart';
 import 'package:dio/dio.dart';
 
+const apiUrl = 'https://10.0.2.2:7029/api/v1';
+
 @OpenapiRepository(
   buildFor: IntelliplanApi,
   builderList: [
@@ -14,8 +16,8 @@ import 'package:dio/dio.dart';
     RepositoryBuilder(ProjectsApi),
     RepositoryBuilder(TheoristsApi),
   ],
-  liveBasePath: r'http://localhost:5177/api/v1',
-  baseUrl: r'http://localhost:5177/api/v1',
+  liveBasePath: apiUrl,
+  baseUrl: apiUrl,
   dioInterceptor: IntelliplanDioInterceptor,
   defaultPageSize: 100,
   defaultOffset: 0,
